@@ -2,19 +2,14 @@
 
 import sys
 
-def read_input(file):
-    for line in file:
-        yield line.split()
-
-def main():
-    for x in sys.stdin.readlines():
-        for i in x.split():
-            q = ''
-            for c in i:
-                if str.isalpha(c):
-                    q = q + c
-            if q != '' and q[0] == 'A':
-                print(str.lower(q) + '\t' + str(1))
-
-if __name__ == "__main__":
-    main()
+for line in sys.stdin:
+    line = line.strip()
+    words = line.split()
+    for i in words:
+        q = ''
+        for c in i:
+            if str.isalpha(c):
+                 q = q + c
+        q = str.lower(q)
+        if q != '' and q[0] == 'a':
+            print '%s\t%s' % (q, 1)
