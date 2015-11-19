@@ -6,12 +6,15 @@ def read_input(file):
     for line in file:
         yield line.split()
 
-def main(separator='\t'):
-    data = read_input(sys.stdin)
-    for words in data:
-        for word in words:
-            if (word[0] == 'А'):
-                print '%s%s%d' % (word, separator, 1)
+def main():
+    for x in sys.stdin.readlines():
+        for i in x.split():
+            q = ''
+            for c in i:
+                if str.isalpha(c):
+                    q = q + c
+            if q != '' and q[0] == 'A':
+                print(str.lower(q) + '\t' + str(1))
 
 if __name__ == "__main__":
     main()
