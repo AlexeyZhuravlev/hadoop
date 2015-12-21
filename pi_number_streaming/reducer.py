@@ -11,4 +11,4 @@ for line in sys.stdin:
         success += int(count)
     total += int(count)
 
-print (float(success) / float(total))
+print (4 * float(success) / float(total))
